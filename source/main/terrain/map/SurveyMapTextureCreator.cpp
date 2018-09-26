@@ -47,7 +47,7 @@ SurveyMapTextureCreator::SurveyMapTextureCreator(Ogre::Vector3 terrain_size) :
 
 bool SurveyMapTextureCreator::init()
 {
-    TexturePtr texture = Ogre::TextureManager::getSingleton ().getByName ("MapRttMat");
+    TexturePtr texture = Ogre::TextureManager::getSingleton().getByName("MapRttTex");
 
     if (texture.isNull())
         return false;;
