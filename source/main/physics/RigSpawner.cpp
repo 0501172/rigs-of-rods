@@ -6944,7 +6944,8 @@ void ActorSpawner::FinalizeGfxSetup()
 
         //-trans
         char transmatname[256];
-        sprintf(transmatname, "%s-trans", m_cab_material_name.c_str());
+        static int trans_counter = 0;
+        sprintf(transmatname, "%s-trans-%d", m_cab_material_name.c_str(), trans_counter++);
         Ogre::MaterialPtr transmat=mat->clone(transmatname);
         if (mat->getTechnique(0)->getNumPasses()>1) // If there's the "emissive pass", remove it from the 'transmat'
         {
@@ -6961,7 +6962,8 @@ void ActorSpawner::FinalizeGfxSetup()
 
         //-back
         char backmatname[256];
-        sprintf(backmatname, "%s-back", m_cab_material_name.c_str());
+        static int back_counter = 0;
+        sprintf(backmatname, "%s-back-%d", m_cab_material_name.c_str(), back_counter++);
         Ogre::MaterialPtr backmat=mat->clone(backmatname);
         if (mat->getTechnique(0)->getNumPasses()>1)// If there's the "emissive pass", remove it from the 'transmat'
         {
